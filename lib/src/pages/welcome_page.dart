@@ -37,7 +37,7 @@ class WelcomePage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 30.0),
                 child: Text(
-                  'Ingresa tu ubicación exacta para encontrar las mejores opciones cerca de tu zona',
+                  'Inicia sesión para encontrar las mejores opciones cerca de ti',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w400,
@@ -54,8 +54,37 @@ class WelcomePage extends StatelessWidget {
                       primary: Theme.of(context).accentColor,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0))),
-                  child: Text('Iniciar sesión'),
+                  child: Text('Iniciar sesión',
+                      style: TextStyle(color: Colors.white, fontSize: 15.0)),
                 ),
+              ),
+              Container(
+                width: 350.0,
+                height: 45.0,
+                margin: EdgeInsets.only(top: 20.0),
+                child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        primary: Theme.of(context).buttonColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image(
+                            image: AssetImage('lib/assets/facebook_logo.png'),
+                            width: 20.0,
+                            height: 20.0),
+                        Container(
+                          margin: EdgeInsets.only(left: 10.0),
+                          child: Text(
+                            'Conectar con Facebook',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 15.0),
+                          ),
+                        )
+                      ],
+                    )),
               )
             ],
           )
