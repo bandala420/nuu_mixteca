@@ -1,9 +1,14 @@
+import 'dart:html';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:nuu_mixteca/src/pages/login_page.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.white));
     return Scaffold(
       body: Stack(
         children: [
@@ -11,8 +16,7 @@ class WelcomePage extends StatelessWidget {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(
-                        'https://images.unsplash.com/photo-1562869929-bda0650edb1f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1524&q=80'))),
+                    image: AssetImage('lib/assets/welcome_page.jpg'))),
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
               child: Container(
@@ -26,7 +30,7 @@ class WelcomePage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 50.0),
                 child: Text(
-                  'EL MEJOR PLÁN PARA TUS SIGUIENTES VACACIONES',
+                  'COMUNIDAD DIGITAL DE SERVICIOS Y PRODUCTOS',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -48,8 +52,12 @@ class WelcomePage extends StatelessWidget {
               Container(
                 width: 350.0,
                 height: 45.0,
+                margin: EdgeInsets.only(top: 40.0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginPage()));
+                  },
                   style: ElevatedButton.styleFrom(
                       primary: Theme.of(context).accentColor,
                       shape: RoundedRectangleBorder(
@@ -61,7 +69,7 @@ class WelcomePage extends StatelessWidget {
               Container(
                 width: 350.0,
                 height: 45.0,
-                margin: EdgeInsets.only(top: 20.0),
+                margin: EdgeInsets.only(top: 10.0),
                 child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
